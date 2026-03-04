@@ -16,8 +16,8 @@ get_option() {
 
 # --- Configuration ---
 JUMPLIST_SIZE=$(get_option "@jumplist-size" "50")
-JUMPLIST_BACK_KEY=$(get_option "@jumplist-back-key" "M-o")
-JUMPLIST_FORWARD_KEY=$(get_option "@jumplist-forward-key" "M-i")
+JUMPLIST_BACK_KEY=$(get_option "@jumplist-back-key" "C-k")
+JUMPLIST_FORWARD_KEY=$(get_option "@jumplist-forward-key" "C-j")
 NOTIFY_MENU_KEY=$(get_option "@notify-menu-key" "C-n")
 NOTIFY_CLEAR_KEY=$(get_option "@notify-clear-key" "M-n")
 
