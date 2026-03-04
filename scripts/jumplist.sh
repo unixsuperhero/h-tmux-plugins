@@ -11,7 +11,7 @@ get_session_name() {
 }
 
 jumplist_file() {
-  echo "/tmp/tmux-jumplist-$(get_session_name)"
+  echo "/tmp/tmux-jumplist"
 }
 
 pos_file() {
