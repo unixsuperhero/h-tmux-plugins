@@ -67,8 +67,10 @@ record() {
   fi
 
   # If position is not at the head, truncate forward history
-  if (( pos > 0 )); then
+  if (( pos > 0 && ${#entries[@]} > 0 )); then
     entries=("${entries[@]:$pos}")
+    set_pos 0
+  elif (( pos > 0 )); then
     set_pos 0
   fi
 
@@ -88,9 +90,11 @@ record() {
 
   {
     echo "$new_entry"
-    for entry in "${entries[@]}"; do
-      echo "$entry"
-    done
+    if (( ${#entries[@]} > 0 )); then
+      for entry in "${entries[@]}"; do
+        echo "$entry"
+      done
+    fi
   } | head -n "$max_size" > "${jf}.tmp"
   mv "${jf}.tmp" "$jf"
 }
