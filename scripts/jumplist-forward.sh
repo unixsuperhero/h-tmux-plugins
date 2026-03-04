@@ -63,8 +63,11 @@ main() {
     target_window=$(echo "$entry" | cut -d'|' -f2)
 
     if pane_exists "$target_pane"; then
+      local target_session
+      target_session=$(echo "$entry" | cut -d'|' -f3)
       # Set suppression flag so hooks don't record this navigation
       tmux set-environment TMUX_JUMPLIST_SUPPRESS 1
+      tmux switch-client -t "${target_session}" 2>/dev/null || true
       tmux select-window -t "$target_window" 2>/dev/null || true
       tmux select-pane -t "$target_pane" 2>/dev/null || true
       set_pos "$new_pos"
