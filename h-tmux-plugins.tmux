@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # h-tmux-plugins.tmux -- Main entry point (sourced by TPM)
 # Provides: Jumplist navigation + Notification tracker
 
