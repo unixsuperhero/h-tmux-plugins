@@ -27,8 +27,8 @@ tmux set-hook -g after-select-pane "run-shell -b '${SCRIPTS_DIR}/jumplist.sh rec
 tmux set-hook -g after-select-window "run-shell -b '${SCRIPTS_DIR}/jumplist.sh record'"
 
 # --- Jumplist keybindings ---
-tmux bind-key "$JUMPLIST_BACK_KEY" run-shell "${SCRIPTS_DIR}/jumplist-back.sh"
-tmux bind-key "$JUMPLIST_FORWARD_KEY" run-shell "${SCRIPTS_DIR}/jumplist-forward.sh"
+tmux bind-key -r "$JUMPLIST_BACK_KEY" run-shell "${SCRIPTS_DIR}/jumplist-back.sh"
+tmux bind-key -r "$JUMPLIST_FORWARD_KEY" run-shell "${SCRIPTS_DIR}/jumplist-forward.sh"
 
 # --- Notification keybindings ---
 tmux bind-key "$NOTIFY_MENU_KEY" run-shell "${SCRIPTS_DIR}/notify-menu.sh"
